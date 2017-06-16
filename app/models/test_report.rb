@@ -1,0 +1,2 @@
+class TestReport < ApplicationRecord
+end
