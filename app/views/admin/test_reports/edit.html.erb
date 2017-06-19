@@ -1,0 +1,31 @@
+<h2>修改测试结果</h2>
+
+<%= simple_form_for [:admin, @test_report]  do |report|%>
+  <div class="group">
+    <%= report.input :name%>
+  </div>
+
+  <div class="group">
+    <%= report.input :result %>
+  </div>
+
+  <div class="group">
+    <%= report.input :version %>
+  </div>
+
+  <div class="group">
+    <%= report.input :content  %>
+  </div>
+
+  <div class="group">
+    <%= report.input :details %>
+  </div>
+
+  <div class="group">
+    <%= report.input :condition %>
+  </div>
+
+  <%= report.submit "update", data: { disable_with: "Submitting..."} %>
+
+
+<% end %>

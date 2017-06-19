@@ -1,0 +1,40 @@
+<h2>新建测试结果</h2>
+
+<%= simple_form_for [:admin, @test_report]  do |report|%>
+
+<!-- <% if @test_report.errors.any? %>
+<ul>
+  <%# @test_report.full_messages.each do |msg| %>
+    <li><%#= msg %></li>
+  <%# end %>
+</ul>
+<% end %> -->
+
+  <div class="group">
+    <%= report.input :name, input_html: { class: "form-control"}%>
+  </div>
+
+  <div class="group">
+    <%= report.input :result%>
+  </div>
+
+  <div class="group">
+    <%= report.input :version %>
+  </div>
+
+  <div class="group">
+    <%= report.input :content %>
+  </div>
+
+  <div class="group">
+    <%= report.input :details %>
+  </div>
+
+  <div class="group">
+    <%= report.input :condition %>
+  </div>
+
+  <%= report.submit "create", data: { disable_with: "Submitting..."} %>
+
+
+<% end %>
