@@ -16,6 +16,11 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
+              <% if current_user.is_admin? %>
+                <li>
+                  <%= link_to("Admin 选项", admin_test_reports_path) %>
+                </li>
+              <% end %>
               <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>
