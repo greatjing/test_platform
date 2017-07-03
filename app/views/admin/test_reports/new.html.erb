@@ -34,6 +34,11 @@
     <%= report.input :condition %>
   </div>
 
+  <div class="group">
+    <%= report.input :friendly_id %>
+    <p class="help-h=block">限小写英数字及横线，将作为网址的一部分</p>
+  </div>
+
   <%= report.submit "create", data: { disable_with: "Submitting..."} %>
 
 

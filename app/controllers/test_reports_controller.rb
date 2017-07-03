@@ -6,7 +6,8 @@ class TestReportsController < ApplicationController
   end
 
   def show
-    @test_report = TestReport.find(params[:id])
+    #@test_report = TestReport.find(params[:id])
+    @test_report = TestReport.find_by_friendly_id!(params[:id])
   end
 
 end

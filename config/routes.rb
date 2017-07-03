@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :test_reports
 
   namespace :admin do
-    resources :test_reports
+    resources :test_reports do
+      collection do
+        post :import_excel
+      end
+    end
   end
 end

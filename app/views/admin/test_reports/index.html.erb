@@ -2,6 +2,7 @@
   <div class="group">
     <%= link_to("新建测试结果", new_admin_test_report_path, class: "btn btn-default btn-sm pull-right"  ) %>
   </div>
+
   <table class="table table-hover">
     <thead>
       <tr>
@@ -26,6 +27,8 @@
                         method: :delete, data: { confirm: "Are you sure?" }) %>
           </td>
         </tr>
+        <%= link_to("excel", import_excel_admin_test_reports_path, class: "btn btn-default btn-sm"  ) %>
+
       <% end %>
     </tbody>
   </table>
