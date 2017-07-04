@@ -1,0 +1,8 @@
+zh-CN:
+  activerecord:
+    attributes:
+      test_report:
+        result: "测试结果"
+        version: "测试版本"
+        content: "测试内容"
+#暂时没有用到这个文档内容

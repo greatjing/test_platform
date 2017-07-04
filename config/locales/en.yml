@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+
+"en":
+  hello: "hi %{name},"
+  report_list: Result Report List
+  admin:
+    report_list: Admin Result Report List

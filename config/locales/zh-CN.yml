@@ -1,0 +1,5 @@
+"zh-CN":
+  hello: "亲～ %{name} 你好："
+  report_list: 测试结果
+  admin:
+    report_list: 测试结果管理

@@ -47,6 +47,12 @@ gem 'devise'
 #数据库mysql
 gem 'mysql2'
 
+#中文翻译词汇挡
+gem 'rails-i18n'
+
+#devise中文翻译
+gem 'devise-i18n'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   #gem 'byebug', platform: :mri
@@ -54,7 +60,7 @@ group :development, :test do
   #debug工具
   gem 'pry'
   gem 'awesome_rails_console'
-  
+
 end
 
 group :development do
