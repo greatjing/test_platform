@@ -12,4 +12,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  #与resources：user相比，单数路由少了index action，并且地址上不会有id，路由方法也都是单数
+  #不需要参数，eg：user_path，edit_user_paths
+  resource :user
+
 end

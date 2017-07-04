@@ -14,6 +14,7 @@ module TestPlatform
 
     #修改默认语系成中文
     config.i18n.default_locale = "zh-CN"
-    
+    #设置默认为北京＋8时区：
+    config.time_zone = "Beijing"
   end
 end

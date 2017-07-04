@@ -13,6 +13,7 @@
         <th>测试结果</th>
         <th>测试版本</th>
         <th>测试范围</th>
+        <th>创建时间</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +24,7 @@
           <td><%= report.result %></td>
           <td><%= report.version %></td>
           <td><%= report.content %></td>
+          <td><%= report.created_at %></td>
           <!-- <td>
             <%= link_to("edit", edit_test_report_path(report), class: "btn btn-sm btn-default") %>
             <%= link_to("delete", test_report_path(report),    class: "btn btn-sm btn-default",
