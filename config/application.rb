@@ -16,5 +16,8 @@ module TestPlatform
     config.i18n.default_locale = "zh-CN"
     #设置默认为北京＋8时区：
     config.time_zone = "Beijing"
+    #设置默认时间格式
+    Time::DATE_FORMATS.merge!(:default => '%Y/%m/%d %I:%M %p', :ymd => '%Y/%m/%d')
+
   end
 end

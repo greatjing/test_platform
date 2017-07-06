@@ -24,7 +24,10 @@
           <td><%= report.result %></td>
           <td><%= report.version %></td>
           <td><%= report.content %></td>
-          <td><%= report.created_at %></td>
+          <!-- <td><%= report.created_at.strftime("%Y/%m/%d %I:%M %p") %></td> -->
+          <!-- 时间的另一种方式显示 -->
+          <td><%= report.created_at.to_s %></td>
+
           <!-- <td>
             <%= link_to("edit", edit_test_report_path(report), class: "btn btn-sm btn-default") %>
             <%= link_to("delete", test_report_path(report),    class: "btn btn-sm btn-default",
