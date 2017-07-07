@@ -68,6 +68,6 @@ class Admin::TestReportsController < ApplicationController
   private
 
   def test_report_params
-    params.require(:test_report).permit(:name, :result, :version, :content, :details, :condition, :friendly_id)
+    params.require(:test_report).permit(:name, :result, :version, :content, :details, :condition, :status, :friendly_id)
   end
 end

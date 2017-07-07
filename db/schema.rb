@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704061805) do
+ActiveRecord::Schema.define(version: 20170707051844) do
 
   create_table "test_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "result"
@@ -18,10 +18,11 @@ ActiveRecord::Schema.define(version: 20170704061805) do
     t.text     "content",     limit: 65535
     t.text     "details",     limit: 65535
     t.text     "condition",   limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.string   "name"
     t.string   "friendly_id"
+    t.string   "status",                    default: "draft"
     t.index ["friendly_id"], name: "index_test_reports_on_friendly_id", unique: true, using: :btree
   end
 

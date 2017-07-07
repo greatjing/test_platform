@@ -25,6 +25,29 @@
     <%= report.input :condition %>
   </div>
 
+  <!-- 增加发布状态  -->
+  <%= report.label :status %>
+  <div class="group btn-group" data-toggle="buttons">
+
+    <!-- <%= report.select :status, TestReport::STATUS.map{ |s| [t(s, :scope => "test_report.status"), s] }, {}, :class => "form-control" %> -->
+    <!-- 三个以下选项使用单选框 -->
+    <% TestReport::STATUS.each do |status| %>
+      <label class="btn btn-default <%= (status == report.object.status)? 'active' : '' %>">
+        <%= report.radio_button :status, status %>
+        <%= t(status, :scope => "test_report.status" ) %>
+      </label>
+    <% end %>
+  </div>
+
+  <br>
+
+<!-- 自定义url打开后显示字符串  -->
+    <div class="group">
+      <%= report.input :friendly_id %>
+      <p class="help-h=block">限小写英数字及横线，将作为网址的一部分</p>
+    </div>
+
+
   <%= report.submit "update", data: { disable_with: "Submitting..."} %>
 
 

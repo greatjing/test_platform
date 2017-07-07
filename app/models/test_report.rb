@@ -11,6 +11,11 @@ class TestReport < ApplicationRecord
 
   before_validation :generate_friendly_id, :on => :create
 
+  #状态值
+  STATUS = ["draft", "public", "private"]
+  #下面时状态的验证
+  validates_inclusion_of :status, :in => STATUS
+
  #url上不显示id显示随机数
   def to_param
     #"#{self.id}-#{self.name}"

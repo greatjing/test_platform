@@ -3,3 +3,10 @@
   report_list: 测试结果
   admin:
     report_list: 测试结果管理
+
+  #测试结果中文显示
+  test_report:
+    status:
+      draft: 草稿
+      public: 公开
+      private: 私密
