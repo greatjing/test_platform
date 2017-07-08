@@ -11,6 +11,9 @@ class TestReport < ApplicationRecord
 
   before_validation :generate_friendly_id, :on => :create
 
+  #报告属于一种类型
+  belongs_to :category, :optional => true
+
   #状态值
   STATUS = ["draft", "public", "private"]
   #下面时状态的验证
