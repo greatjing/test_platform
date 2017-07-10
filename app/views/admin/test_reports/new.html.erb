@@ -51,8 +51,13 @@
   <br>
 
   <!--增加类型选项  -->
-  <div class="group">
+  <!-- <div class="group" >
     <%= report.association:category %>
+  </div> -->
+  <!-- 上面的方式不知道怎么加id -->
+  <div class="group">
+    <%= report.label :category_id %>
+    <%= report.select :category_id, Category.all.map{ |c| [c.name, c.id] }, {}, :class => "form-control", :id => "report_category_id" %>
   </div>
 
 <!-- 自定义url打开后显示字符串  -->
@@ -63,5 +68,9 @@
 
   <%= report.submit "create", data: { disable_with: "Submitting..."} %>
 
-
 <% end %>
+
+<!-- select2 -->
+<script>
+  $("#report_category_id").select2( { theme: "bootstrap" } )
+</script>

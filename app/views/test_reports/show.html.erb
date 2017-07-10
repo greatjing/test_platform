@@ -1,4 +1,7 @@
-<h2><%= @test_report.name %></h2>
+<h2>
+  <%= @test_report.name %>
+  <%= @test_report.category.try(:name) %>
+</h2>
 
 <p>
   【测试结果】：

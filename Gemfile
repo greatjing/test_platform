@@ -53,6 +53,9 @@ gem 'rails-i18n'
 #devise中文翻译
 gem 'devise-i18n'
 
+#jquery plugin:select2
+gem "select2-rails"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   #gem 'byebug', platform: :mri
