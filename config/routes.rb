@@ -11,6 +11,8 @@ Rails.application.routes.draw do
         post :import_excel
       end
     end
+    #添加用户管理
+    resources :users
   end
 
   #与resources：user相比，单数路由少了index action，并且地址上不会有id，路由方法也都是单数

@@ -1,0 +1,20 @@
+<h2>编辑用户</h2>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation" >
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= simple_form_for [:admin, @user] do |user| %>
+  <div class="group">
+    <%= user.input :email %>
+  </div>
+
+  <%= user.submit "update", data: { disable_with: "Submitting..." } %>
+
+<% end %>
