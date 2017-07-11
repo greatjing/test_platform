@@ -6,4 +6,8 @@ class User < ApplicationRecord
   def is_admin?
     is_admin
   end
+
+  has_many :memberships
+  has_many :groups, :through => :memberships
+
 end

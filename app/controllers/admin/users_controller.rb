@@ -11,7 +11,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    # @users = User.all
+    @users = User.includes(:groups).all
   end
 
   def edit
@@ -22,7 +23,9 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to admin_user_path
+      binding.pry
+      redirect_to admin_users_path
+      binding.pry
     else
       render "edit"
     end
@@ -31,7 +34,7 @@ class Admin::UsersController < ApplicationController
   protected
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :group_ids => [])
   end
 
 end

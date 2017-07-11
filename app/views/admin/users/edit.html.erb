@@ -10,11 +10,26 @@
   </div>
 <% end %>
 
-<%= simple_form_for [:admin, @user] do |user| %>
+<%= simple_form_for [:admin, @user] do |f| %>
   <div class="group">
-    <%= user.input :email %>
+    <%= f.input :email %>
   </div>
 
-  <%= user.submit "update", data: { disable_with: "Submitting..." } %>
+  <div class="group">
+    <%= f.label :group_ids %>
+    <!-- <%= f.collection_check_boxes(:group_ids, Group.all, :id, :name) %> -->
+    <%= f.select :group_ids, Group.all.map{ |g| [g.name, g.id] }, {}, :multilpe => true, :class => "form-control", :id => "user_group_ids" %>
+  </div>
+
+<!-- 不知道怎么加id -->
+  <!-- <div class="group">
+    <%= f.association:groups, :as => :check_boxes , :id => "user_group_ids"%>
+  </div> -->
+
+  <%= f.submit "update", data: { disable_with: "Submitting..." } %>
 
 <% end %>
+
+<script>
+  $("#user_group_ids").select2( { theme: "bootstrap" } )
+</script>
