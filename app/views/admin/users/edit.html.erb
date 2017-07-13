@@ -15,16 +15,20 @@
     <%= f.input :email %>
   </div>
 
+<!-- 下面代码是正确的，现在使用simple_form_for写法 -->
   <div class="group">
-    <%= f.label :group_ids %>
+    <%#= f.label :group_ids %>
     <!-- <%= f.collection_check_boxes(:group_ids, Group.all, :id, :name) %> -->
-    <%= f.select :group_ids, Group.all.map{ |g| [g.name, g.id] }, {}, :multilpe => true, :class => "form-control", :id => "user_group_ids" %>
+    <%#= f.select :group_ids, Group.all.map{ |g| [g.name, g.id] }, {}, :multiple => true, :class => "form-control", :id => "user_group_ids" %>
   </div>
 
-<!-- 不知道怎么加id -->
-  <!-- <div class="group">
-    <%= f.association:groups, :as => :check_boxes , :id => "user_group_ids"%>
-  </div> -->
+<!-- simple_form_for写法 -->
+  <div class="group">
+    <!-- 单选框写法 -->
+    <!-- <%= f.association:groups, :as => :check_boxes , :id => "user_group_ids"%> -->
+    <!-- 复选框  -->
+    <%= f.association :groups %>
+  </div>
 
   <%= f.submit "update", data: { disable_with: "Submitting..." } %>
 
