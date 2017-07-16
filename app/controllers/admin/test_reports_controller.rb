@@ -15,11 +15,13 @@ class Admin::TestReportsController < ApplicationController
 
   def new
     @test_report = TestReport.new
+    #新建其他测试结果信息
+    @test_report.testinfos.build
   end
 
   def create
     @test_report = TestReport.new(test_report_params)
-    #binding.pry
+    binding.pry
     if @test_report.save
 
       redirect_to admin_test_reports_path, notice:  "新建成功"
@@ -32,6 +34,8 @@ class Admin::TestReportsController < ApplicationController
   def edit
     #@test_report = TestReport.find(params[:id])
     @test_report = TestReport.find_by_friendly_id(params[:id])
+    #新建其他测试结果信息
+    @test_report.testinfos.build if @test_report.testinfos.empty?
   end
 
   def update
@@ -70,6 +74,7 @@ class Admin::TestReportsController < ApplicationController
   private
 
   def test_report_params
-    params.require(:test_report).permit(:name, :result, :version, :content, :details, :condition, :status, :friendly_id, :category_id)
+    #params.require(:test_report).permit(:name, :result, :version, :content, :details, :condition, :status, :friendly_id, :category_id)
+    params.require(:test_report).permit(:name, :result, :version, :content, :details, :condition, :status, :friendly_id, :category_id, :testinfos_attributes => [:id, :name, :description, :_destroy])
   end
 end

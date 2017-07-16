@@ -56,6 +56,9 @@ gem 'devise-i18n'
 #jquery plugin:select2
 gem "select2-rails"
 
+# 动态新增字段（前端）
+gem "nested_form_fields"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   #gem 'byebug', platform: :mri

@@ -16,4 +16,5 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require select2
+//= require nested_form_fields
 //= require_tree .

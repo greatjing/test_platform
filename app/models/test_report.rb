@@ -25,6 +25,12 @@ class TestReport < ApplicationRecord
     self.friendly_id
   end
 
+  #给添加额外的测试结果信息
+  has_many :testinfos, :dependent => :destroy
+  #嵌套表单
+  accepts_nested_attributes_for :testinfos, :allow_destroy => true, :reject_if => :all_blank
+
+
   protected
 
  #在新建一个test_report时就生成随机数赋值给friendly_id
