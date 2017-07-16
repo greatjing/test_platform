@@ -21,7 +21,7 @@ class Admin::TestReportsController < ApplicationController
 
   def create
     @test_report = TestReport.new(test_report_params)
-    binding.pry
+    
     if @test_report.save
 
       redirect_to admin_test_reports_path, notice:  "新建成功"
