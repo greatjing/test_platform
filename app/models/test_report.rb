@@ -25,8 +25,8 @@ class TestReport < ApplicationRecord
     self.friendly_id
   end
 
-  #给添加额外的测试结果信息
-  has_many :testinfos, :dependent => :destroy
+  #给添加额外的测试结果信息，:inverse_of反过来关联数据（属于ruby bug）
+  has_many :testinfos, :dependent => :destroy, :inverse_of => :test_report
   #嵌套表单
   accepts_nested_attributes_for :testinfos, :allow_destroy => true, :reject_if => :all_blank
 
